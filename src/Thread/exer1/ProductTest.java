@@ -25,9 +25,13 @@ public class ProductTest {
 
 class Clerk {
     private int clerkNum = 0;//生产数量
+
+    /**
+     * 生产方法
+     */
     public synchronized void produceProdect() {
         if (clerkNum < 20) {
-            clerkNum++;
+            clerkNum++;//先生产再打印
             System.out.println(Thread.currentThread().getName() + ":开始生产第" + clerkNum + "产品");
             notify();
         } else {
@@ -38,11 +42,13 @@ class Clerk {
             }
         }
     }
-
+    /**
+     * 消费方法
+     */
     public synchronized void consumeProdect() {
         if (clerkNum > 0) {
             System.out.println(Thread.currentThread().getName() + ":开始消费第" + clerkNum + "产品");
-            clerkNum--;
+            clerkNum--;//先打印后消费
             notify();
         } else {
             try {
