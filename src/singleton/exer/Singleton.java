@@ -1,4 +1,4 @@
-package sinleton.exer;
+package singleton.exer;
 
 
 

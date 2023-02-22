@@ -1,6 +1,6 @@
-package sinleton.exer;
+package singleton.exer;
 
-public class SinletonText2 {
+public class SingletonText2 {
     public static void main(String[] args) {
        Sinleton1 res= Sinleton1.getGetIn();
        Sinleton1 asc= Sinleton1.getGetIn();
